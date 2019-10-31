@@ -1,0 +1,930 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="AAFS.Site" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>AAFS</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <!-- SmartMenus jQuery Bootstrap Addon CSS -->
+    <link href="css/jquery.smartmenus.bootstrap.css" rel="stylesheet" />
+    <link href="css/owl/owl.carousel.css" rel="stylesheet" type="text/css" />
+    <link href="css/owl/owl.theme.css" rel="stylesheet" type="text/css" />
+    <link href="css/owl/owl.transitions.css" rel="stylesheet" type="text/css" />
+    <!-- Custom CSS -->
+    <link href="css/1-col-portfolio.css" rel="stylesheet" />
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu:300,400,700' rel='stylesheet'
+        type='text/css' />
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400italic,700italic,400,700"
+        rel="stylesheet" type="text/css" />
+    <!-- Required plugin - Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css" />
+    <link href="fonts/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="fonts/materialdesignicons.css" rel="stylesheet" />
+    <link href="fonts/materialdesignicons.min.css" rel="stylesheet" />
+    <link href="fonts/ionicons.min.css" rel="stylesheet" />
+    <link href="fonts/ionicons.css" rel="stylesheet" />
+    <link href="fonts/foundation-icons.css" rel="stylesheet" />
+
+
+      <%-- AutoComplete --%>
+        <link href="js/awesomplete.css" rel="stylesheet" />
+    <script src="js/awesomplete.js" async="async"></script>
+      <link href="css/ModalsProgress.css" rel="stylesheet" />
+
+    <%-- Validation --%>
+    <link href="css/Validation.css" rel="stylesheet" />
+    <script src="js/Validation.js"></script>
+    <%-- End Validation --%>
+    <%-- Text --%>
+    <link href="css/TextSize.css" rel="stylesheet" />
+    <%-- SideBarrrr --%>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <%-- MAkes black, shifts icons, align search bar, adds dots to slide --%>
+    <link href="css/simple-sidebar.css" rel="stylesheet" />
+
+    <%-- SideBar --%>
+    <link href="css/simple-sidebar.css" rel="stylesheet" />
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/wow.min.js" type="text/javascript"></script>
+    <script src="js/contact.js" type="text/javascript"></script>
+    <script src="js/tutorial.js"></script>
+    <script src="css/owl/owl.carousel.js" type="text/javascript"></script>
+    <!-- SmartMenus jQuery plugin -->
+    <script type="text/javascript" src="js/jquery.smartmenus.js"></script>
+    <!-- SmartMenus jQuery Bootstrap Addon -->
+    <script type="text/javascript" src="js/jquery.smartmenus.bootstrap.js"></script>
+
+    <%-- Validation Scripts --%>
+    <script type="text/javascript" src="js/Validation/PasswordStrengthChecker.js"></script>
+    <%-- End of Validation Scripts --%>
+
+    <%-- Stuff for sliding forms --%>
+    <!-- Dont forget to rename the css file -->
+    <link rel="stylesheet" href="css/sliding-form-style.css" type="text/css" media="screen" />
+    <!-- Make this resource local -->
+    <script src="js/jquery-1.4.2.min.js"></script>
+    <script type="text/javascript" src="js/sliding.form.js"></script>
+    <%-- End of Stuff for sliding forms --%>
+
+    <style>
+        .hght
+        {
+            height:20px;
+            text-align:left;
+            margin-right:10px;
+        }
+        /*<%-- Page Load --%>*/
+        /* Center the loader */
+        #loader {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            z-index: 99;
+            width: 400px;
+            height: 400px;
+            margin: -75px 0 0 -75px;
+            background-image: url("img/loader.gif");
+            background-repeat: no-repeat;
+        }
+        /*<%-- End Page Load --%>*/
+        .sideBody {
+            margin-top: 50px;
+        }
+
+        .glyphicon {
+            margin-right: 10px;
+        }
+
+        .fa {
+            margin-right: 10px;
+        }
+
+        .panel-body {
+            padding: 0px;
+        }
+
+            .panel-body table tr td {
+                padding-left: 15px;
+            }
+
+            .panel-body .table {
+                margin-bottom: 0px;
+            }
+
+        a {
+            text-decoration: none;
+            display: inline-block;
+        }
+        /*Name Banners*/
+        #nameStudent, #nameOfficer, #nameOwner {
+            width: 100%;
+        }
+        /*End Banners*/
+        /*Badge on the side bar*/
+        .badge {
+            color: #fff;
+            background-color: red /*#3498db*/;
+        }
+        /*End of badge*/
+    </style>
+</head>
+<body onload="myFunction()">
+
+    <%--     style="margin:0;"--%>
+
+    <form id="form1" runat="server">
+
+        <%-- PageLoader --%>
+        <div id="loader"></div>
+
+        <%-- End Loader --%>
+        <div id="myDiv" style="">
+            <!-- Navbar fixed top -->
+            <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span><span
+                                class="icon-bar"></span><span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#menu-toggle1" id="menu-toggle1"><i class="fa fa-bars"></i></a>
+                        <asp:LinkButton ID="linkHome" OnClick="linkHome_Click" runat="server" class="navbar-brand"><i class="fa fa-home"></i></asp:LinkButton>
+                    </div>
+                    <div class="navbar-collapse collapse">
+                        <!-- Left nav -->
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <a id="notificantionBtn" href="#" runat="server"><i class="fa fa-bell fa-2x"><span class="badge" runat="server" id="NumNotifications">0</span></i></a>
+                            </li>
+                            <li>
+                                <a id="loginBtn" href="Login.aspx" runat="server"><i class="fa fa-user fa-2x"></i>Sign In</a>
+                            </li>
+                            <li>
+                                <a id="RegBtn" href="#RegModal" runat="server"><i class="fa fa-user-plus fa-2x"></i>Sign Up</a>
+                            </li>
+                            <li>
+                                <asp:LinkButton ID="logout" runat="server" CausesValidation="false" OnClick="logout_Click"><i class="fa fa-power-off fa-2x"></i></asp:LinkButton>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <%-- Sidebar --%>
+            <div id="wrapper1">
+                <div id="sidebar-wrapper1">
+                    <%-- Student --%>
+                    <div class="containerSideBar " id="StudentSideBar" runat="server">
+                        <h3>
+                            <label id="nameStudent" runat="server" class="label label-primary banner"></label>
+                        </h3>
+                        <%-- style="text-align:center; --%>
+                        <div class="row">
+                            <div class="col-sm-3 col-md-3">
+                                <div class="panel-group" id="accordion2">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title">
+                                                <a data-toggle="collapse" data-parent="#accordion2" href="#collapseOne2"><span class="glyphicon glyphicon-home"></span>HOTEL</a>
+                                            </h4>
+                                        </div>
+                                        <div id="collapseOne2" class="panel-collapse collapse in">
+                                            <div class="panel-body">
+                                                <table class="table">
+                                                    <tr>
+                                                        <td>
+                                                            <a href="AccommodationList2.aspx"><i class="fa fa-list"></i>Hotel List</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="AccommodationPerCampus.aspx"><i class="fa fa-map"></i>Hotels Around You</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="TopAccommodations.aspx"><i class="fa fa-star"></i>Top Rated Hotels</a>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading" runat="server" id="bookingDiv">
+                                            <h4 class="panel-title">
+                                                <a data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo2"><span class="glyphicon glyphicon-book"></span>Bookings</a><span runat="server" class="badge" style="background-color: #3498db;" id="numBookings"></span>
+                                            </h4>
+                                        </div>
+                                        <div id="collapseTwo2" class="panel-collapse collapse">
+                                            <div class="panel-body">
+                                                <table class="table">
+                                                    <tr>
+                                                        <td>
+                                                            <a href="Std_MyBookings.aspx?Req=">My Bookings</a>
+                                                        </td>
+                                                    </tr>
+
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading" runat="server" id="accountDiv">
+                                            <h4 class="panel-title">
+                                                <a data-toggle="collapse" data-parent="#accordion2" href="#collapseThree2"><span class="glyphicon glyphicon-user"></span>Account</a>
+                                            </h4>
+                                        </div>
+                                        <div id="collapseThree2" class="panel-collapse collapse">
+                                            <div class="panel-body">
+                                                <table class="table">
+                                                    <tr>
+                                                        <td>
+                                                            <a href="Std_MyProfile.aspx">My Profile</a>
+                                                        </td>
+                                                    </tr>
+                                                    <%--<tr>
+                                                    <td>
+                                                        <a href="Usr_ChangePassword.aspx">Change Password</a>
+                                                    </td>
+                                                </tr>--%>
+
+                                                    <tr>
+                                                        <td>
+                                                            <span class="glyphicon glyphicon-trash text-danger"></span><a href="Usr_DeleteAccount.aspx" class="text-danger">Delete Account</a>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <%--<div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion2" href="#collapseFour2"><span class="glyphicon glyphicon-file"></span>Reports</a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseFour2" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <table class="table">
+                                                <tr>
+                                                    <td>
+                                                        <span class="glyphicon glyphicon-usd"></span><a href="#">Sales</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <span class="glyphicon glyphicon-user"></span><a href="#">Customers</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <span class="glyphicon glyphicon-tasks"></span><a href="#">Products</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <span class="glyphicon glyphicon-shopping-cart"></span><a href="#">Shopping Cart</a>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>--%>
+                                </div>
+                            </div>
+
+                            <%-- End.... --%>
+                        </div>
+                    </div>
+
+                    <%-- End Student --%>
+                    <%--Officer  --%>
+                    <div class="containerSideBar " id="OfficerSideBar" runat="server">
+                        <h3>
+                            <label id="nameOfficer" runat="server" class="label label-primary"></label>
+                        </h3>
+                        <div class="row">
+                            <div class="col-sm-3 col-md-3">
+                                <div class="panel-group" id="accordion4">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title">
+                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne4"><i class="fa fa-users"></i>Manage Users </a>
+                                            </h4>
+                                        </div>
+                                        <div id="collapseOne4" class="panel-collapse collapse in">
+                                            <div class="panel-body">
+                                                <table class="table">
+                                                    <tr>
+                                                        <td>
+                                                            <span class="glyphicon glyphicon-pencil text-primary"></span><a href="ManageOfficers.aspx">Manage Officers</a>
+                                                        </td>
+                                                    </tr>
+                                                      
+                                                    
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title">
+                                                <a data-toggle="collapse" data-parent="#accordion4" href="#collapseTwo4"><span class="glyphicon glyphicon-certificate"></span>Accreditaion</a>
+                                            </h4>
+                                        </div>
+                                        <div id="collapseTwo4" class="panel-collapse collapse">
+                                            <div class="panel-body">
+                                                <table class="table">
+                                                    <tr>
+                                                        <td>
+                                                            <a href="Off_AccredApplications.aspx">Applications</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="Off_AccreditedAccommodations.aspx">Accredited Hotels</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="Off_UnsuccessAccredApply.aspx">Unsuccessful Applications </a>
+                                                        </td>
+                                                    </tr>
+
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title">
+                                                <a data-toggle="collapse" data-parent="#accordion4" href="#collapseThree4"><span class="glyphicon glyphicon-check"></span>Inspection</a>
+                                            </h4>
+                                        </div>
+                                        <div id="collapseThree4" class="panel-collapse collapse">
+                                            <div class="panel-body">
+                                                <table class="table">
+                                                    <tr>
+                                                        <td>
+                                                            <a href="Off_InspectionForm.aspx">View Inspection Form</a>
+                                                        </td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td>
+                                                            <a href="Off_UpcomeInspections.aspx">Upcoming Inspections</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="Off_UnsucessInspect.aspx">Unsuccessful Inspections</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="Off_AddInspectionQuestions.aspx">Add Inspection Form Questions</a>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title">
+                                                <a data-toggle="collapse" data-parent="#accordion4" href="#collapseFive4"><i class="fa fa-line-chart"></i>Reports</a>
+                                            </h4>
+                                        </div>
+                                        <div id="collapseFive4" class="panel-collapse collapse">
+                                            <div class="panel-body">
+                                                <table class="table">
+                                                    <tr>
+                                                        <td>
+                                                            <span class="glyphicon glyphicon-refresh"></span><a href="Off_GeneralReports.aspx">General</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <span class="fa fa-institution"></span><a href="Rpt_Campus.aspx?campus=apk">Johannesburg (JHB)</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <span class="fa fa-institution"></span><a href="Rpt_Campus.aspx?campus=apb">Pretoria (PTA)</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <span class="fa fa-institution"></span><a href="Rpt_Campus.aspx?campus=dfc">Durban (DBN)</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <span class="fa fa-institution"></span><a href="Rpt_Campus.aspx?campus=swc">Cape Town (CPT)</a>
+                                                        </td>
+                                                    </tr>
+                                                    <%--      <tr>
+                                                        <td>
+                                                            <span class="glyphicon glyphicon-user"></span><a href="#">Capacities</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <span class="glyphicon glyphicon-shopping-cart"></span><a href="#">Bookings Per Accommodations</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <span class="glyphicon glyphicon-user"></span><a href="#">Accommodated Students</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <span class="glyphicon glyphicon-tasks"></span><a href="#">Funding Types</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <span class="glyphicon glyphicon-shopping-cart"></span><a href="#">Gender Groupings</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <span class="glyphicon glyphicon-shopping-cart"></span><a href="#">Student Bookings</a>
+                                                        </td>
+                                                    </tr>--%>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title">
+                                                <a data-toggle="collapse" data-parent="#accordion4" href="#collapseFour4"><span class="glyphicon glyphicon-user"></span>Account</a>
+                                            </h4>
+                                        </div>
+                                        <div id="collapseFour4" class="panel-collapse collapse">
+                                            <div class="panel-body">
+                                                <table class="table">
+                                                    <tr>
+                                                        <td>
+                                                            <a href="Std_MyProfile.aspx">My Profile</a>
+                                                        </td>
+                                                    </tr>
+                                                    <%-- <tr>
+                                                    <td>
+                                                        <a href="Usr_ChangePassword.aspx">Change Password</a>
+                                                    </td>
+                                                </tr>--%>
+
+
+                                                    <tr>
+                                                        <td>
+                                                            <span class="glyphicon glyphicon-trash text-danger"></span><a href="Usr_DeleteAccount.aspx" class="text-danger">Delete Account</a>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <%-- End.... --%>
+                        </div>
+                    </div>
+                    <%-- End Officer --%>
+                    <%--Owner  --%>
+                    <div class="containerSideBar " id="OwnerSideBar" runat="server">
+                        <h3>
+                            <label id="nameOwner" runat="server" width="100%" class="label label-primary"></label>
+                        </h3>
+                        <div class="row">
+                            <div class="col-sm-3 col-md-3">
+                                <div class="panel-group" id="accordion3">
+
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title">
+                                                <a data-toggle="collapse" data-parent="#accordion3" href="#collapseSeven3"><span class="glyphicon glyphicon-folder-open"></span>Company</a>
+                                            </h4>
+                                        </div>
+                                        <div id="collapseSeven3" class="panel-collapse collapse in">
+                                            <div class="panel-body">
+                                                <table class="table">
+                                                    <tr>
+                                                        <td>
+                                                            <span class="glyphicon glyphicon-plus-sign text-primary"></span><a href="Acc_AddCompany.aspx">Add Company</a>
+
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <span class="glyphicon glyphicon-pencil text-primary"></span><a href="Acc_MyCompanies.aspx">Manage Companies</a>
+
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title">
+                                                <a data-toggle="collapse" data-parent="#accordion3" href="#collapseOne3"><span class="glyphicon glyphicon-home"></span>Hotel</a>
+                                            </h4>
+                                        </div>
+                                        <div id="collapseOne3" class="panel-collapse collapse">
+                                            <div class="panel-body">
+                                                <table class="table">
+                                                    <tr>
+                                                        <td>
+                                                            <span class="glyphicon glyphicon-plus text-primary"></span><a href="Acc_AddAccommodation.aspx">Add Hotel</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>                                                            
+                                                            <asp:LinkButton ID="linkMyAccommo" runat="server" 
+                                                                OnClick="linkMyAccommo_Click" class=" hght"
+                                                                CausesValidation="false" >
+                                                               <span class="glyphicon glyphicon-adjust text-primary"></span>Manage Hotels</asp:LinkButton>
+                                                            <%--<a href="Acc_MyAccommodations.aspx?OwnrID=">Manage Accommodations</a>--%>
+                                                        </td>
+                                                    </tr>
+
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title">
+                                                <a data-toggle="collapse" data-parent="#accordion3" href="#collapseTwo3"><span class="glyphicon glyphicon-certificate"></span>Accreditation</a>
+                                            </h4>
+                                        </div>
+                                        <div id="collapseTwo3" class="panel-collapse collapse">
+                                            <div class="panel-body">
+                                                <table class="table">
+                                                    <tr>
+                                                        <td>
+                                                            <a href="Accredit_HowToApply.aspx">How To Apply</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="Acc_UnsuccessAccredApply.aspx">Unsuccessful Applications</a>
+                                                        </td>
+                                                    </tr>
+                                                    <%--<tr>
+                                                    <td>
+                                                        <a href="Acc_AccredStatus.aspx">Accreditation Status</a>
+                                                    </td>
+                                                </tr>--%>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title">
+                                                <a data-toggle="collapse" data-parent="#accordion3" href="#collapseThree3"><span class="glyphicon glyphicon-check"></span>Inspection</a>
+                                            </h4>
+                                        </div>
+                                        <div id="collapseThree3" class="panel-collapse collapse">
+                                            <div class="panel-body">
+                                                <table class="table">
+                                                    <tr>
+                                                        <td>
+                                                            <a href="Acc_UpComingInspection.aspx">Upcoming Inspection(s)</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="Off_InspectionForm.aspx">Sample Inspection Form</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="Acc_InspectReport.aspx">Inspection Report(s)</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="Acc_UnsuccessInspec.aspx">Unsuccessful Inspection(s)</a>
+                                                        </td>
+                                                    </tr>
+
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title">
+                                                <a data-toggle="collapse" data-parent="#accordion3" href="#collapseFour3"><span class="glyphicon glyphicon-book"></span>Bookings</a>
+                                            </h4>
+                                        </div>
+                                        <div id="collapseFour3" class="panel-collapse collapse">
+                                            <div class="panel-body">
+                                                <table class="table">
+                                                    <tr>
+                                                        <td>
+                                                            <a href="Acc_StudentBookings.aspx">Client Bookings</a>    <%-- Shows who booked and --%>
+                                                       
+                                                        </td>
+                                                    </tr>
+
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title">
+                                                <a data-toggle="collapse" data-parent="#accordion3" href="#collapseSix3"><i class="fa fa-line-chart"></i>Reports</a>
+                                            </h4>
+                                        </div>
+                                        <div id="collapseSix3" class="panel-collapse collapse">
+                                            <div class="panel-body">
+                                                <table class="table">
+                                                     <tr>
+                                                        <td>
+                                                            <span class="glyphicon glyphicon-dashboard"></span><a href="Acc_GenerelReports.aspx">General</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <asp:LinkButton ID="linkAccRpt" runat="server" 
+                                                                OnClick="linkAccRpt_Click" class=" hght" 
+                                                                CausesValidation="false">
+                                                               <span class="glyphicon glyphicon-adjust text-primary"></span> Hotels</asp:LinkButton>                                                         
+                                                        </td>
+                                                    </tr>
+                                                    <%--<tr>
+                                                    <td>
+                                                        <span class="glyphicon glyphicon-shopping-cart"></span><a href="#">Shopping Cart</a>
+                                                    </td>
+                                                </tr>--%>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title">
+                                                <a data-toggle="collapse" data-parent="#accordion3" href="#collapseFive3"><span class="glyphicon glyphicon-user"></span>Account</a>
+                                            </h4>
+                                        </div>
+                                        <div id="collapseFive3" class="panel-collapse collapse">
+                                            <div class="panel-body">
+                                                <table class="table">
+                                                    <tr>
+                                                        <td>
+                                                            <a href="Std_MyProfile.aspx">My Profile</a>
+                                                        </td>
+                                                    </tr>
+                                                    <%--<tr>
+                                                   <td>
+                                                        <a href="Usr_ChangePassword.aspx">Change Password</a>
+                                                    </td>
+                                                </tr>--%>
+
+                                                    <tr>
+                                                        <td>
+                                                            <span class="glyphicon glyphicon-trash text-danger"></span><a href="Usr_DeleteAccount.aspx" class="text-danger">Delete Account</a>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <%-- End.... --%>
+                        </div>
+                    </div>
+                    <%-- End Owner --%>
+                </div>
+
+                <%-- Start of Content placeholder --%>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+                <%-- End of Content placeholder --%>
+
+
+                 <%-- FOoter --%>
+                    <footer id="fh5co-footer">
+
+                        <div class="fh5co-footer-content">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-2 col-sm-3 col-md-push-2 animated wow fadeInUp" data-wow-delay="0.2s">
+                                    </div>
+                                    <div class="col-md-3 col-sm-4 col-md-push-3 animated wow fadeInUp" data-wow-delay="0.4s">
+                                        <div class="fh5co-footer-logo"><a href="AboutUs.aspx">Hotels & Accomodations (Pty) Ltd.</a></div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-4 col-md-push-3 animated wow fadeInUp" data-wow-delay="0.6s">
+                                        <p class="fh5co-social-icons">
+                                            <a href="#"><i class="fa fa-twitter fa-3x"></i></a>
+                                            <a href="#"><i class="fa fa-facebook fa-3x"></i></a>
+                                            <a href="#"><i class="fa fa-instagram fa-3x"></i></a>
+                                            <a href="#"><i class="fa fa-dribbble fa-3x"></i></a>
+                                            <a href="#"><i class="fa fa-youtube fa-3x"></i></a>
+                                        </p>
+                                    </div>
+
+                                    <div class="col-md-3 col-sm-12 col-md-pull-9 animated wow fadeInUp" data-wow-delay="0.8s">
+                                        <p class="fh5co-copyright">
+                                            <br />
+                                            <small>&copy;</small> 2018. All Rights Reserved.- 
+                                                <br />
+                                        </p>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </footer>
+            </div>
+        </div>
+        <!-- /#wrapper -->
+
+        <%-- Loader script --%>
+        <script src="js/PageLoad.js"></script>
+        <%-- end loader --%>
+
+        <!-- jQuery -->
+        <script src="js/Sidebar.js"></script>
+
+        <!-- Bootstrap Core JavaScript -->
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/bootstrap.js"></script>
+        <!-- Menu Toggle Script -->
+        <script>
+            $("#menu-toggle1").click(function (e) {
+                e.preventDefault();
+                $("#wrapper1").toggleClass("toggled");
+
+            });
+
+        </script>
+        <%-- End --%>
+
+
+
+        <%-- Login and Registration Modals --%>
+        <!-- LogIn Modal -->
+        <div class="modal fade" id="LoginModal" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- LogIn content-->
+                <div class="modal-content">
+                    <div class="modal-header" style="padding: 35px 50px;">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <span><i class="fa fa-lock Ourfont "></i>Login</span>
+
+                    </div>
+                    <div class="modal-body" style="padding: 40px 50px;">
+                        <%--</div>--%>
+                        <div class="form-group">
+                            <label for="usrname"><i class="fa fa-lock Ourfont"></i>Username</label>
+                            <input type="text" class="form-control" id="usrname" placeholder="Enter email" />
+                        </div>
+                        <div class="form-group">
+                            <label for="psw"><i class="fa fa-eye Ourfont "></i>Password</label>
+                            <input type="text" class="form-control" id="psw" placeholder="Enter password" />
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" />Remember me</label>
+                        </div>
+                        <button type="submit" class="btn btn-success btn-block"><i class="fa fa-Power-off Ourfont"></i>Login</button>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span><i class="fa fa-remove"></i>Cancel</span></button>
+                        <p>Not a member? <a href="#">Sign Up</a></p>
+                        <p>Forgot <a href="#">Password?</a></p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- LogIn Modal Button script-->
+        <script>
+            $(document).ready(function () {
+                $("#LoginBtn").click(function () {
+                    $("#LoginModal").modal();
+                });
+            });
+        </script>
+
+
+        <!-- Registration -->
+
+        <div class="modal fade" id="RegModal" role="dialog" runat="server">
+            <div class="modal-dialog">
+
+                <!--Registration Modal content-->
+                <div class="modal-content">
+                    <div class="Reg-modal-header" style="padding: 35px 50px;">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h2 style="text-align: center;"><i class="fa fa-pencil-square-o"></i>Registration</h2>
+                    </div>
+                    <div class="modal-body">
+
+                        <a href="Registration_Student.aspx" id="LinkStudent" runat="server" style="width: 100%" class="btn btn-default btn-sm btn-min-block">
+                            <i class="fa fa-graduation-cap fa-5x"></i>
+                            <h4><b>CLIENT     </b></h4>
+                        </a>
+                        <br />
+                        <br />
+                        <a href="Registration_Acc_Owner.aspx" id="LinkAccommo" runat="server" style="width: 100%" class="btn btn-default btn-sm btn-min-block">
+                            <i class="fa fa-home fa-5x"></i>
+                            <h4><b>HOTEL
+                               
+                                OWNER</b></h4>
+                        </a>
+                        <br />
+                        <br />
+                        <a href="Registration_Admin.aspx" id="LinkAdmin" runat="server" style="width: 100%" class="btn btn-default btn-sm btn-min-block">
+                            <i class="fa fa-shield fa-5x"></i>
+                            <h4><b>HOTEL
+                                
+                                OFFICER</b></h4>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!--Registration Script-->
+        <script>
+            $(document).ready(function () {
+                $("#RegBtn").click(function () {
+                    $("#RegModal").modal();
+                });
+            });
+        </script>
+        <%--END  Login and Registration Modals --%>
+
+        <%-- Script for to Top of Page --%>
+        <script type="text/javascript">
+            // create the back to top button
+            $('form').prepend('<a href="#" class="back-to-top">Back to Top</a>');
+
+            var amountScrolled = 300;
+
+            $(window).scroll(function () {
+                if ($(window).scrollTop() > amountScrolled) {
+                    $('a.back-to-top').fadeIn('slow');
+                } else {
+                    $('a.back-to-top').fadeOut('slow');
+                }
+            });
+
+            $('a.back-to-top, a.simple-back-to-top').click(function () {
+                $('html, body').animate({
+                    scrollTop: 0
+                }, 700);
+                return false;
+            });
+        </script>
+        <%-- End To topPage --%>
+    </form>
+
+     
+</body>
+</html>
