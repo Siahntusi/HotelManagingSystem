@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="WFC.RegistrationUser" CodeBehind="RegistrationUser.svc.cs" %>

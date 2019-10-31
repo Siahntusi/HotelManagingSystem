@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Managementofhotels" Class="HotelManagerServerDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=DESKTOP-PKHHSLS\SQLEXPRESS;Initial Catalog=Managementofhotels;Integrated Security=True;MultipleActiveResultSets=True;Application Name=EntityFramework" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="ManagementofhotelsConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.HOTEL_OWNER" Member="HOTEL_OWNERs">
+    <Type Name="HOTEL_OWNER">
+      <Column Name="OWNER_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FULL_NAMES" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="SURNAME" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="TITLE" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="GENDER" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="EMAIL" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="NUMBER" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="PASSWORD" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="AUTHENTICATION_LEVEL" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HOTEL_MANAGER" Member="HOTEL_MANAGERs">
+    <Type Name="HOTEL_MANAGER">
+      <Column Name="MANAGER_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FULL_NAMES" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="SURNAME" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="TITLE" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="GENDER" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="EMPLOYEE_NUMBER" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="EMAIL" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="NUMBER" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="PASSWORD" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="AUTHENTICATION_LEVEL" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CLIENT" Member="CLIENTs">
+    <Type Name="CLIENT">
+      <Column Name="CLIENT_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FULL_NAMES" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="SURNAME" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="TITLE" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="GENDER" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="EMAIL" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="NUMBER" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="PAYMENT_TYPE" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="PASSWORD" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="AUTHENTICATION_LEVEL" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>
